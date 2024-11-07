@@ -8,34 +8,50 @@
 </body>
 <script language="JavaScript">
 function convert() {
-            // Pytanie o wybór jednostki do przeliczenia
-            const conversionType = prompt("Wybierz jednostkę do przeliczenia: wpisz '1' dla mil na kilometry lub '2' dla kilometrów na mile");
+
+            const conversionType = prompt("Wybierz jednostkę do przeliczenia: ");
             
-            // Sprawdzenie, czy użytkownik podał prawidłową opcję
-            if (conversionType !== "1" && conversionType !== "2") {
+
+            if (conversionType !== "mile" && conversionType !== "km") {
                 document.getElementById("result").innerText = "Nieprawidłowy wybór jednostki.";
                 return;
             }
             
-            // Pytanie o wartość do przeliczenia
-            const inputValue = parseFloat(prompt("Podaj wartość do przeliczenia:"));
+
+            const inputValue = parseFloat(prompt("Podaj wartość do przeliczenia: "));
             
-            // Sprawdzenie, czy wartość jest liczbą
+      
             if (isNaN(inputValue)) {
                 document.getElementById("result").innerText = "Proszę podać prawidłową liczbę.";
                 return;
             }
             
-            // Konwersja jednostek w zależności od wybranej opcji
+       
             let resultText;
-            if (conversionType === "1") { // Mile na kilometry
+            if (conversionType === "mile") { 
                 const kilometers = (inputValue * 1.60934).toFixed(2);
                 resultText = `${inputValue} mil to ${kilometers} km`;
-            } else if (conversionType === "2") { // Kilometry na mile
+            } else if (conversionType === "km") { 
                 const miles = (inputValue / 1.60934).toFixed(2);
                 resultText = `${inputValue} km to ${miles} mil`;
             }
             
-            // Wyświetlenie wyniku na stronie
+            
             document.getElementById("result").innerText = resultText;
         }
+  switch (key) {
+  case '+':
+
+    break;
+  case value:
+
+    break;
+
+  default:
+    break;
+}
+
+
+</script>
+</body>
+</html>
