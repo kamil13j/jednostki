@@ -13,7 +13,7 @@ function convert() {
             
 
             if (conversionType !== "mile" && conversionType !== "km") {
-                document.getElementById("result").innerText = "Nieprawidłowy wybór jednostki.";
+                document.write("result").innerText = "Nieprawidłowy wybór jednostki.";
                 return;
             }
             
@@ -22,7 +22,7 @@ function convert() {
             
       
             if (isNaN(inputValue)) {
-                document.getElementById("result").innerText = "Proszę podać prawidłową liczbę.";
+                document.write("result").innerText = "Proszę podać prawidłową liczbę.";
                 return;
             }
             
