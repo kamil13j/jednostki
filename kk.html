@@ -7,14 +7,22 @@
   super kalkulator jednostek
 </body>
 <script language="JavaScript">
-const number1 = parseFloat(prompt('Na jaką jednostkę chcesz przeliczyć km czy mile: '));
-const number2 = parseFloat(prompt('Podaj ilość km/mil: '));
+const conversionType = parseFloat(prompt('Na jaką jednostkę chcesz przeliczyć km czy mile: '));
+            
 
-if (isNaN(number1)) {
-   document.write('Wpisz poprawnie jednostkę');
-} else if (isNaN(number2)) {
-   document.write('wpisz poprawnie liczbę');
-}
+if (conversionType !== "mile" && conversionType !== "km") {
+      document.write("result").innerText = "Nieprawidłowy wybór jednostki.";
+      return;
+       }
+            
+
+const inputValue = parseFloat(prompt("Podaj wartość do przeliczenia: "));
+            
+      
+if (isNaN(inputValue)) {
+        document.write("result").innerText = "Proszę podać prawidłową liczbę.";
+        return;
+
 if (conversionType === "mile") { 
     const kilometers = (inputValue * 1.60934).toFixed(2);
       resultText = `${inputValue} mil to ${kilometers} km`;
