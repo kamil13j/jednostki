@@ -14,15 +14,13 @@ if (isNaN(number1)) {
    document.write('Wpisz poprawnie jednostkę');
 } else if (isNaN(number2)) {
    document.write('wpisz poprawnie liczbę');
-} else {
-  document.write('<p>konwenter jednostek<p> ' + (number1) + ' to ');
 }
-   if (conversionType === "mile") { 
-                const kilometers = (inputValue * 1.60934).toFixed(2);
-                resultText = `${inputValue} mil to ${kilometers} km`;
-            } else if (conversionType === "km") { 
-                const miles = (inputValue / 1.60934).toFixed(2);
-                resultText = `${inputValue} km to ${miles} mil`;
+if (conversionType === "mile") { 
+    const kilometers = (inputValue * 1.60934).toFixed(2);
+      resultText = `${inputValue} mil to ${kilometers} km`;
+} else if (conversionType === "km") { 
+    const miles = (inputValue / 1.60934).toFixed(2);
+      resultText = `${inputValue} km to ${miles} mil`;
             }
 switch (key) {
   case '+':
