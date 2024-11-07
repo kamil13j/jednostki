@@ -17,6 +17,13 @@ if (isNaN(number1)) {
 } else {
   document.write('<p>konwenter jednostek<p> ' + (number1) + ' to ');
 }
+   if (conversionType === "mile") { 
+                const kilometers = (inputValue * 1.60934).toFixed(2);
+                resultText = `${inputValue} mil to ${kilometers} km`;
+            } else if (conversionType === "km") { 
+                const miles = (inputValue / 1.60934).toFixed(2);
+                resultText = `${inputValue} km to ${miles} mil`;
+            }
 switch (key) {
   case '+':
 
