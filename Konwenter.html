@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konwerter Jednostek</title>
+</head>
+<body>
+    <h1>Konwerter jednostek</h1>
+    <p>Wybierz jednostkę, którą chcesz przeliczyć:</p>
+    
+    <label>
+        <input type="radio" name="conversionType" value="milesToKm" checked> Mile na kilometry
+    </label>
+    <label>
+        <input type="radio" name="conversionType" value="kmToMiles"> Kilometry na mile
+    </label>
+    
+    <p>Podaj wartość do przeliczenia:</p>
+    <input type="number" id="valueInput" placeholder="Wpisz wartość">
+    
+    <button onclick="convert()">Przelicz</button>
+    
+    <p id="result"></p>
+
+    <script>
+        function convert() {
+            const conversionType = document.querySelector('input[name="conversionType"]:checked').value;
+            const inputValue = parseFloat(document.getElementById("valueInput").value);
+            
+            if (isNaN(inputValue)) {
+                document.getElementById("result").innerText = "Proszę podać prawidłową liczbę.";
+                return;
+            }
+            
+            let resultText;
+            if (conversionType === "milesToKm") {
+                const kilometers = (inputValue * 1.60934).toFixed(2);
+                resultText = `${inputValue} mil to ${kilometers} km`;
+            } else if (conversionType === "kmToMiles") {
+                const miles = (inputValue / 1.60934).toFixed(2);
+                resultText = `${inputValue} km to ${miles} mil`;
+            }
+            
+            document.getElementById("result").innerText = resultText;
+        }
+    </script>
+</body>
+</html>
