@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konwerter Jednostek</title>
+</head>
+<body>
+    <h1>Konwerter jednostek</h1>
+    <button onclick="convert()">Przelicz jednostki</button>
+    
+    <p id="result"></p>
+
+    <script>
+        function convert() {
+            // Pytanie o wybór jednostki do przeliczenia
+            const conversionType = prompt("Wybierz jednostkę do przeliczenia: wpisz '1' dla mil na kilometry lub '2' dla kilometrów na mile");
+            
+            // Sprawdzenie, czy użytkownik podał prawidłową opcję
+            if (conversionType !== "1" && conversionType !== "2") {
+                document.getElementById("result").innerText = "Nieprawidłowy wybór jednostki.";
+                return;
+            }
+            
+            // Pytanie o wartość do przeliczenia
+            const inputValue = parseFloat(prompt("Podaj wartość do przeliczenia:"));
+            
+            // Sprawdzenie, czy wartość jest liczbą
+            if (isNaN(inputValue)) {
+                document.getElementById("result").innerText = "Proszę podać prawidłową liczbę.";
+                return;
+            }
+            
+            // Konwersja jednostek w zależności od wybranej opcji
+            let resultText;
+            if (conversionType === "1") { // Mile na kilometry
+                const kilometers = (inputValue * 1.60934).toFixed(2);
+                resultText = `${inputValue} mil to ${kilometers} km`;
+            } else if (conversionType === "2") { // Kilometry na mile
+                const miles = (inputValue / 1.60934).toFixed(2);
+                resultText = `${inputValue} km to ${miles} mil`;
+            }
+            
+            // Wyświetlenie wyniku na stronie
+            document.getElementById("result").innerText = resultText;
+        }
+    </script>
+</body>
+</html>
