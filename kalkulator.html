@@ -16,11 +16,11 @@ if (isNaN(number1)) {
    document.write('wpisz poprawnie liczbę');
 }
 if (conversionType === "mile") { 
-    const kilometers = (inputValue * 1.60934).toFixed(2);
-      resultText = `${inputValue} mil to ${kilometers} km`;
+    const kilometers = (number2 * 1.60934).toFixed(2);
+      resultText = `${number2} mil to ${(number2 * 1.60934)} km`;
 } else if (conversionType === "km") { 
-    const miles = (inputValue / 1.60934).toFixed(2);
-      resultText = `${inputValue} km to ${miles} mil`;
+    const miles = (number2 / 1.60934).toFixed(2);
+      resultText = `${number2} km to ${(number2 / 1.60934)} mil`;
             }
 switch (key) {
   case '+':
